@@ -1,0 +1,8 @@
+[{
+    "name": "Tom Butcher",
+    "photographs_amount": 20,
+    "followers": 92,
+    "following": 56,
+    "profile_picture": "url('images/main/profile.jpeg')",
+    "cover_picture": "url('images/main/cover.jpeg')"
+}]

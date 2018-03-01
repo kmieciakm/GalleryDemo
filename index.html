@@ -8,15 +8,15 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="profile_photo"></div>
-    <h3 class="profile_name">Tom Butcher</h3>
+  <header id="cover">
+    <div id="profile" class="profile_photo"></div>
+    <h3 class="profile_name"></h3>
     <ul class="profile_stats">
-      <li class="profile_stats_element">144 photos</li>
-      <li class="profile_stats_element">98 followers</li>
-      <li class="profile_stats_element">56 following</li>
+      <li id="photographs_amount" class="profile_stats_element"></li>
+      <li id="followers_amount" class="profile_stats_element"></li>
+      <li id="following_amount" class="profile_stats_element"></li>
     </ul>
-    <div class="profile_btn-follow"><i class="fas fa-plus"></i> follow</div>
+    <div id="follow_btn" class="profile_btn-follow"><i class="fas fa-plus"></i> follow</div>
   </header>
   <nav>
     <ul class="menu">
@@ -37,5 +37,6 @@
     <div class="photo photo_big photo_big_right"></div>
   </div>
   <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+  <script src="load.js"></script>
 </body>
 </html>
