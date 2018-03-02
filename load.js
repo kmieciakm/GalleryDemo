@@ -22,6 +22,21 @@ document.addEventListener("DOMContentLoaded",function(){
         //load profile picture
         profile_picture_box.style.backgroundImage = data.profile_picture;
         cover_picture_box.style.backgroundImage = data.cover_picture;
+        
+        //Show photographs
+        let photographs_amount = data.photographs_amount;
+        if(photographs_amount < 8)
+          ShowPhotos(photographs_amount);
+        else
+          ShowPhotos(8);
+        //scrolling to the bottom of the page
+        window.addEventListener("scroll",function(){
+          if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight){
+            //ToDo:
+            //Load more photos
+            console.log("bootom");
+          }
+        });
       }
     }
     request.open("GET", "data.JSON", true);
@@ -49,7 +64,7 @@ document.addEventListener("DOMContentLoaded",function(){
     request.send();
   }
 
-  var GetFromJSON = function(prop){
+  function GetFromJSON(prop){
     return new Promise(function(resolve,reject){
       let request = new XMLHttpRequest();
       request.onreadystatechange = function(){
@@ -71,8 +86,20 @@ document.addEventListener("DOMContentLoaded",function(){
       SendToJSON("followers",new_followers);
     })
   }
-
   add_btn.addEventListener("click",UpdateListener);
+
+  function ShowPhotos(amount){
+    for(let i=0, j=0; i<amount; i++){
+      let element = document.createElement("div");
+      photos_showed++;
+      element.className = "photo "+photo_classes[j];
+      element.style.backgroundImage = "url('images/photo"+photos_showed+".jpeg')"
+      wrapper.appendChild(element);
+      j++;
+      if(j==4)
+        j=0;
+    }
+  }
 
   LoadJSON();
 })
