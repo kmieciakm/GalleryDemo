@@ -8,6 +8,13 @@ document.addEventListener("DOMContentLoaded",function(){
 
   let add_btn = document.getElementById("follow_btn");
 
+  let wrapper = document.getElementById("wrapper");
+  let photo_classes = [ "photo_big",
+  "photo_small",
+  "photo_small photo_small_left",
+  "photo_big photo_big_right" ];
+  let photos_showed = 0;
+
   //load JSON
   function LoadJSON(){
     let request = new XMLHttpRequest();
