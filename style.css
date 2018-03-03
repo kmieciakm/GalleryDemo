@@ -8,6 +8,11 @@ html{
   font-size: 16px;
 }
 
+a{
+  text-decoration: none;
+  color: #fff;
+}
+
 header{
   position: relative;
   background-color: #5591D1;

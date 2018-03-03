@@ -39,9 +39,13 @@ document.addEventListener("DOMContentLoaded",function(){
         //scrolling to the bottom of the page
         window.addEventListener("scroll",function(){
           if((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight){
-            //ToDo:
-            //Load more photos
-            console.log("bootom");
+            if(photographs_amount-photos_showed>0){
+              if(photographs_amount-photos_showed<8){
+                ShowPhotos(photographs_amount-photos_showed);
+              }else{
+                ShowPhotos(8);
+              }
+            }
           }
         });
       }
@@ -100,7 +104,7 @@ document.addEventListener("DOMContentLoaded",function(){
       let element = document.createElement("div");
       photos_showed++;
       element.className = "photo "+photo_classes[j];
-      element.style.backgroundImage = "url('images/photo"+photos_showed+".jpeg')"
+      element.style.backgroundImage = "url('images/photo"+photos_showed+".jpeg')";
       wrapper.appendChild(element);
       j++;
       if(j==4)
